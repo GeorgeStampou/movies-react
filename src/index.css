@@ -8,6 +8,11 @@
   font-weight: normal;
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .search {
   align-self: center;
 }
@@ -29,6 +34,14 @@
 
 h2 {
   font-size: 1.4rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 input,
@@ -93,6 +106,55 @@ button {
 
 .movie-info:hover > * {
   transform: translateY(0%);
+}
+
+.search-movie {
+}
+
+.full-info {
+  margin-top: 2%;
+  margin-left: 15%;
+  width: 70%;
+}
+
+.search-head {
+  display: flex;
+  text-align: start;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.search-head h1 {
+  font-weight: 700;
+}
+
+.search-body h2 {
+  font-weight: 600;
+}
+
+.full-info span {
+  font-weight: 500;
+}
+
+.search-body {
+  margin-top: 2%;
+  display: flex;
+  text-align: left;
+  width: 100%;
+}
+
+.search-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-info p {
+  font-size: 1.2rem;
+}
+
+.search-info {
+  margin-left: 2%;
 }
 
 /* :root {

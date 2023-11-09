@@ -14,9 +14,9 @@ const Movie = ({ movieID }) => {
     const getMovie = async () => {
       try {
         const response = await axios.get(apiUri);
-        console.log(response);
+        // console.log(response);
         const { data } = response;
-        console.log(data);
+        // console.log(data);
         setMovie(data);
       } catch (error) {
         console.log(error);
