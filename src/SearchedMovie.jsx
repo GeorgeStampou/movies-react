@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const apiKey = '4b09546b';
 
-const SearchedMovie = ({ movieTitle }) => {
-  const apiUri = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}&plot=full`;
+const SearchedMovie = ({ movieID }) => {
+  const apiUri = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}&plot=full`;
 
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
@@ -22,7 +22,7 @@ const SearchedMovie = ({ movieTitle }) => {
       setIsLoading(false);
     };
     getMovie();
-  }, [movieTitle]);
+  }, [movieID]);
 
   if (isLoading) {
     return <h2>Loading...</h2>;

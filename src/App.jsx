@@ -1,11 +1,9 @@
 import './App.css';
 import MoviesList from './MoviesList';
 import { useState } from 'react';
-import SearchedMovie from './SearchedMovie';
 
 function App() {
-  const [movieSearch, setmovieSearch] = useState('');
-  const [isSearching, setisSearcing] = useState(true);
+  const [movieSearch, setmovieSearch] = useState('Star Wars');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +11,6 @@ function App() {
     const inputs = Object.fromEntries(form);
 
     setmovieSearch(inputs.title);
-    setisSearcing(false);
   };
 
   return (
@@ -29,11 +26,7 @@ function App() {
           <button type='submit'>Search</button>
         </form>
       </div>
-      {isSearching ? (
-        <MoviesList />
-      ) : (
-        <SearchedMovie movieTitle={movieSearch} />
-      )}
+      <MoviesList titleInput={movieSearch} />
     </main>
   );
 }

@@ -26,6 +26,8 @@ const Movie = ({ movieID }) => {
     getMovie();
   }, []);
 
+  const handlePoster = () => {};
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -42,7 +44,7 @@ const Movie = ({ movieID }) => {
   return (
     <>
       <div className='poster'>
-        <img src={poster} alt={title} />
+        <img src={poster} alt={title} onClick={handlePoster} />
         <div className='movie-info'>
           <p>{plot}</p>
           <p>
