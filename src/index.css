@@ -28,7 +28,7 @@
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 input,
@@ -71,11 +71,15 @@ button {
   flex-direction: column;
   justify-content: space-between;
   text-align: start;
-  padding: 1% 0 5% 1%;
+  padding: 1% 0 2% 1%;
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  color: white;
   transition: 0.5s;
+}
+
+.movie-info p {
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .movie-info:hover {

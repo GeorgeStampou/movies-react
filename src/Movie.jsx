@@ -44,9 +44,12 @@ const Movie = ({ movieID }) => {
       <div className='poster'>
         <img src={poster} alt={title} />
         <div className='movie-info'>
-          <p>Plot: {plot}</p>
-          <p>Starring: {actors}</p>
-          <p>IMDB rating: {imdbRating}</p>
+          <p>{plot}</p>
+          <p>
+            Starring: {actors}
+            <br />
+            IMDB rating: {imdbRating}
+          </p>
         </div>
       </div>
       <div className='movie-title'>
