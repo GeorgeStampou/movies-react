@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import APIdata from '../../apiData';
 
-const apiKey = '4b09546b';
+const apiKey = APIdata.apiKey;
 
 const Movie = ({ movieID }) => {
-  // console.log(movieID);
   const apiUri = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}`;
 
   const [movie, setMovie] = useState(null);
@@ -14,9 +14,7 @@ const Movie = ({ movieID }) => {
     const getMovie = async () => {
       try {
         const response = await axios.get(apiUri);
-        // console.log(response);
         const { data } = response;
-        // console.log(data);
         setMovie(data);
       } catch (error) {
         console.log(error);
@@ -25,8 +23,6 @@ const Movie = ({ movieID }) => {
     };
     getMovie();
   }, []);
-
-  const handlePoster = () => {};
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -44,7 +40,7 @@ const Movie = ({ movieID }) => {
   return (
     <>
       <div className='poster'>
-        <img src={poster} alt={title} onClick={handlePoster} />
+        <img src={poster} alt={title} />
         <div className='movie-info'>
           <p>{plot}</p>
           <p>

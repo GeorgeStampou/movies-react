@@ -3,14 +3,14 @@ import MoviesList from './MoviesList';
 import { useState } from 'react';
 
 function App() {
-  const [movieSearch, setmovieSearch] = useState('Star Wars');
+  const [movieSearch, setMovieSearch] = useState('Star Wars');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const inputs = Object.fromEntries(form);
 
-    setmovieSearch(inputs.title);
+    setMovieSearch(inputs.title);
   };
 
   return (

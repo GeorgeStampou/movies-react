@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import APIdata from '../../apiData';
 
-const apiKey = '4b09546b';
+const apiKey = APIdata.apiKey;
 
 const SearchedMovie = ({ movieID }) => {
   const apiUri = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movieID}&plot=full`;

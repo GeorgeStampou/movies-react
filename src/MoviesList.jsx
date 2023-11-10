@@ -2,11 +2,12 @@ import Movie from './Movie';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import SearchedMovie from './SearchedMovie';
+import APIdata from '../../apiData';
 
-const apiKey = '4b09546b';
+const apiKey = APIdata.apiKey;
 
 const MoviesList = ({ titleInput }) => {
-  const [moviesList, setmoviesList] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
   const [posterClicked, setPosterClicked] = useState(false);
   const [movieID, setMovieID] = useState(null);
   const apiUri = `http://www.omdbapi.com/?apikey=${apiKey}&s=${titleInput}&type=movie&page=1`;
@@ -18,8 +19,7 @@ const MoviesList = ({ titleInput }) => {
         const response = await axios.get(apiUri);
         const { data } = response;
         const movies = data.Search;
-        // console.log(movies);
-        setmoviesList(movies);
+        setMoviesList(movies);
       } catch (error) {
         console.log(error);
       }
@@ -34,7 +34,6 @@ const MoviesList = ({ titleInput }) => {
     setPosterClicked(true);
   };
 
-  // console.log(moviesList);
   return (
     <>
       {posterClicked ? (
